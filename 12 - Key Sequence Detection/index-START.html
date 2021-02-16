@@ -3,7 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <title>Key Detection</title>
-  <script type="text/javascript" src="https://www.cornify.com/js/cornify.js"></script>
+  <script type="text/javascript" src="https://www.cornify.com/js/cornify.js">
+    const pressed = [];
+    const codeToPress = 'alejandro';
+
+    window.addEventListener('keyup', (event) => {
+      pressed.push(event.key);
+      pressed.splice(-codeToPress.length - 1, pressed.length - codeToPress.length);
+
+      if(pressed.join('').includes(codeToPress)) {
+        console.log('Wiiinnnneer!!');
+        confify_add();
+      }
+    });
+  </script>
 </head>
 <body>
 <script>
